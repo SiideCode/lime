@@ -555,20 +555,6 @@ namespace lime
 				}
 				break;
 
-			case SDL_JOYHATMOTION:
-
-				if (!SDLJoystick::IsAccelerometer(event->jhat.which))
-				{
-
-					joystickEvent.type = JOYSTICK_HAT_MOVE;
-					joystickEvent.index = event->jhat.hat;
-					joystickEvent.eventValue = event->jhat.value;
-					joystickEvent.id = event->jhat.which;
-
-					JoystickEvent::Dispatch(&joystickEvent);
-				}
-				break;
-
 			case SDL_JOYDEVICEADDED:
 
 				if (SDLJoystick::Connect(event->jdevice.which))
