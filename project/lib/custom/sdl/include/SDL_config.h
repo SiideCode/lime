@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2020 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2022 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -29,10 +29,16 @@
  */
 
 /* Add any platform that doesn't build using the configure system. */
-#if defined(__WIN32__)
+#ifdef USING_PREMAKE_CONFIG_H
+#include "SDL_config_premake.h"
+#elif defined(__WIN32__)
 #include "SDL_config_windows.h"
 #elif defined(__WINRT__)
 #include "SDL_config_winrt.h"
+#elif defined(__WINGDK__)
+#include "SDL_config_wingdk.h"
+#elif defined(__XBOXONE__) || defined(__XBOXSERIES__)
+#include "SDL_config_xbox.h"
 #elif defined(__MACOSX__)
 #include "SDL_config_macosx.h"
 #elif defined(__IPHONEOS__)
@@ -45,13 +51,13 @@
 #include "SDL_config_emscripten.h"
 #elif defined(__NGAGE__)
 #include "SDL_config_ngage.h"
-#elif defined(RASPBERRYPI)
-#include "SDL_config_rpi.h"
-#elif defined(HX_LINUX)
-#include "SDL_config_linux.h"
 #else
 /* This is a minimal configuration just to get SDL running on new platforms. */
 #include "SDL_config_minimal.h"
 #endif /* platform config */
+
+#ifdef USING_GENERATED_CONFIG_H
+#error Wrong SDL_config.h, check your include path?
+#endif
 
 #endif /* SDL_config_h_ */

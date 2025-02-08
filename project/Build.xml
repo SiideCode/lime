@@ -379,13 +379,13 @@
 
 	<include name="lib/cairo-files.xml" />
 	<include name="lib/curl-files.xml" />
-	<include name="lib/efsw/files.xml" />
+	<include name="lib/efsw-files.xml" />
 	<include name="lib/minimp3/files.xml" />
-	<include name="lib/faudio/files.xml" if="LIME_FAUDIO" />
-	<include name="lib/freetype/files.xml" />
-	<include name="lib/harfbuzz/files.xml" />
-	<include name="lib/jpeg/files.xml" />
-	<include name="lib/lzma/files.xml" />
+	<include name="lib/faudio-files.xml" if="LIME_FAUDIO" />
+	<include name="lib/freetype-files.xml" />
+	<include name="lib/harfbuzz-files.xml" />
+	<include name="lib/jpeg-files.xml" />
+	<include name="lib/lzma-files.xml" />
 	<include name="lib/mbedtls-files.xml" />
 	<include name="lib/mojoal-files.xml" />
 	<include name="lib/neko-files.xml" />
@@ -393,7 +393,9 @@
 	<include name="lib/openal-files.xml" />
 	<include name="lib/pixman-files.xml" />
 	<include name="lib/png-files.xml" />
-	<include name="lib/sdl-files.xml" />
+	<!--TODO:
+	convert to new shit later, i'm too fucking tired for that-->
+	<include name="lib/sdl/files.xml" />
 	<include name="lib/tinyfiledialogs-files.xml" />
 	<include name="lib/vorbis-files.xml" />
 	<include name="lib/vpx-files.xml" />

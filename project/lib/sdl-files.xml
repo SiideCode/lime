@@ -84,14 +84,13 @@
     </files>
 
 
-
-
     <files id="native-toolkit-sdl" tags="">
 
         <cache value="1" />
         <tag value="${NATIVE_TOOLKIT_OPTIM_TAG}" if="NATIVE_TOOLKIT_OPTIM_TAG" />
 
-        <compilerflag value="-DUSING_GENERATED_CONFIG_H" if="linux || rpi" /> <!-- For other targets, it doesn't matter which header is included. -->
+        <compilerflag value="-DUSING_GENERATED_CONFIG_H" if="linux || rpi" /> <!-- For other targets,
+        it doesn't matter which header is included. -->
         <depend files="native-toolkit-sdl-depends" />
 
         <compilerflag value="-I${ANDROID_NDK_ROOT}/sources/android/cpufeatures" if="android" />
@@ -137,30 +136,33 @@
 
             <set name="XINPUT2" value="${NATIVE_TOOLKIT_SDL_X11_XINPUT2}" />
             <compilerflag value="-DNATIVE_TOOLKIT_SDL_X11_XINPUT2=${XINPUT2}" if="XINPUT2" />
-            <compilerflag value="-DNATIVE_TOOLKIT_SDL_X11_XINPUT2_SUPPORTS_MULTITOUCH=${XINPUT2}" if="XINPUT2" />
+            <compilerflag value="-DNATIVE_TOOLKIT_SDL_X11_XINPUT2_SUPPORTS_MULTITOUCH=${XINPUT2}"
+                if="XINPUT2" />
             <compilerflag value="-DNATIVE_TOOLKIT_SDL_X11_XINPUT2=0" unless="XINPUT2" />
-            <compilerflag value="-DNATIVE_TOOLKIT_SDL_X11_XINPUT2_SUPPORTS_MULTITOUCH=0" unless="XINPUT2" />
+            <compilerflag value="-DNATIVE_TOOLKIT_SDL_X11_XINPUT2_SUPPORTS_MULTITOUCH=0"
+                unless="XINPUT2" />
 
         </section>
 
-            <section if="rpi">
+        <section if="rpi">
 
-                <compilerflag value="-mfpu=neon" unless="HXCPP_ARM64" />
-                <compilerflag value="-mfloat-abi=hard" unless="HXCPP_ARM64" />
-                <compilerflag value="-I-abi=hard" />
+            <compilerflag value="-mfpu=neon" unless="HXCPP_ARM64" />
+            <compilerflag value="-mfloat-abi=hard" unless="HXCPP_ARM64" />
+            <compilerflag value="-I-abi=hard" />
 
-                <compilerflag value="-I/opt/vc/include" />
-                <compilerflag value="-I/opt/vc/include/interface/vcos/pthreads" />
-                <compilerflag value="-I/opt/vc/include/interface/vmcs_host/linux" />
-                <compilerflag value="-I/usr/include/dbus-1.0" />
-                <compilerflag value="-I/usr/include/interface/vcos/pthreads" />
-                <compilerflag value="-I/usr/include/interface/vmcs_host/linux" />
-                <compilerflag value="-I/usr/include/libdrm" />
-                <compilerflag value="-I/usr/lib/arm-linux-gnueabihf/dbus-1.0/include" unless="HXCPP_ARM64" />
-                <compilerflag value="-I/usr/lib/aarch64-linux-gnu/dbus-1.0/include" if="HXCPP_ARM64" />
-                <compilerflag value="-I/usr/local/include" />
+            <compilerflag value="-I/opt/vc/include" />
+            <compilerflag value="-I/opt/vc/include/interface/vcos/pthreads" />
+            <compilerflag value="-I/opt/vc/include/interface/vmcs_host/linux" />
+            <compilerflag value="-I/usr/include/dbus-1.0" />
+            <compilerflag value="-I/usr/include/interface/vcos/pthreads" />
+            <compilerflag value="-I/usr/include/interface/vmcs_host/linux" />
+            <compilerflag value="-I/usr/include/libdrm" />
+            <compilerflag value="-I/usr/lib/arm-linux-gnueabihf/dbus-1.0/include"
+                unless="HXCPP_ARM64" />
+            <compilerflag value="-I/usr/lib/aarch64-linux-gnu/dbus-1.0/include" if="HXCPP_ARM64" />
+            <compilerflag value="-I/usr/local/include" />
 
-            </section>
+        </section>
 
         <section if="mac">
 
@@ -561,11 +563,13 @@
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/hidapi/ios/hid.m" />
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/joystick/iphoneos/SDL_mfijoystick.m" />
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/locale/dummy/SDL_syslocale.c" />
-            <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/main/uikit/SDL_uikit_main.c" if="NATIVE_TOOLKIT_SDL_STATIC" />
+            <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/main/uikit/SDL_uikit_main.c"
+                if="NATIVE_TOOLKIT_SDL_STATIC" />
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/misc/ios/SDL_sysurl.m" />
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/power/uikit/SDL_syspower.m" />
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/render/metal/SDL_render_metal.m" />
-            <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/sensor/coremotion/SDL_coremotionsensor.m" if="ios" />
+            <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/sensor/coremotion/SDL_coremotionsensor.m"
+                if="ios" />
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/video/uikit/SDL_uikitappdelegate.m" />
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/video/uikit/SDL_uikitclipboard.m" />
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/video/uikit/SDL_uikitevents.m" />
@@ -595,7 +599,8 @@
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/hidapi/android/hid.cpp" />
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/joystick/android/SDL_sysjoystick.c" />
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/locale/android/SDL_syslocale.c" />
-            <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/main/android/SDL_android_main.c" if="NATIVE_TOOLKIT_SDL_STATIC" />
+            <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/main/android/SDL_android_main.c"
+                if="NATIVE_TOOLKIT_SDL_STATIC" />
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/misc/android/SDL_sysurl.c" />
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/power/android/SDL_syspower.c" />
             <file name="${NATIVE_TOOLKIT_PATH}/sdl/src/sensor/android/SDL_androidsensor.c" />
