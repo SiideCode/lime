@@ -713,36 +713,6 @@ class HXProject extends Script
 				defines.set("hlc", "1");
 			}
 		}
-		else if (targetFlags.exists("java"))
-		{
-			defines.set("targetType", "java");
-			defines.set("native", "1");
-			defines.set("java", "1");
-		}
-		else if (targetFlags.exists("nodejs"))
-		{
-			defines.set("targetType", "nodejs");
-			defines.set("native", "1");
-			defines.set("nodejs", "1");
-		}
-		else if (targetFlags.exists("cs"))
-		{
-			defines.set("targetType", "cs");
-			defines.set("native", "1");
-			defines.set("cs", "1");
-		}
-		else if (target == Platform.FIREFOX)
-		{
-			defines.set("targetType", "js");
-			defines.set("html5", "1");
-		}
-		else if (target == Platform.AIR)
-		{
-			defines.set("targetType", "swf");
-			defines.set("flash", "1");
-			if (targetFlags.exists("ios")) defines.set("ios", "1");
-			if (targetFlags.exists("android")) defines.set("android", "1");
-		}
 		else if (target == Platform.WINDOWS && (targetFlags.exists("uwp") || targetFlags.exists("winjs")))
 		{
 			targetFlags.set("uwp", "");
