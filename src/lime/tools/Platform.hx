@@ -1,6 +1,6 @@
 package lime.tools;
 
-enum abstract Platform(String)
+enum abstract Platform(String) from hxp.HostPlatform
 {
 	var ANDROID = "android";
 	var BLACKBERRY = "blackberry";
